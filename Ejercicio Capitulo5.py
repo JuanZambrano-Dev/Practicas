@@ -9,7 +9,21 @@ hawaiana = 350
 
 
 
-dinero = int(input('Indique el dinero que usara para comprar la pizza: '))
+
+
+while True:
+    try:
+        solicitud_dinero = input('Indique el dinero que usara para comprar la pizza: ')
+        dinero = int(solicitud_dinero)
+        if dinero < peperonni:
+            print('No tienes el dinero suficiente. La pizza mas economica son 300$')
+        else: 
+            break
+    except ValueError:
+        print('Solo puedes ingresar caracteres numericos. Intenta nuevamente')
+
+
+
 
 pizza_solicitada = input('Indica la pizza que quieras comprar:\n')
 
@@ -23,12 +37,14 @@ for ingrediente_extra in range(3):
         ingredientes.append(ingrediente_extra)
     elif solicitud.lower() == 'no':
         break
+    else:
+        print('Solo puedes decir Si/No')
 print(f'Los ingredientes que indicaste son los siguientes: {ingredientes}' )
 
 total = 0
 
 for costo_ingrediente in ingredientes:
-    costo_ingredienteingrediente = len(ingredientes) * 3
+    costo_ingrediente = len(ingredientes) * 3
     total += costo_ingrediente
 print(f'El precio total de sus ingredientes es de: {total}$\n')
 
@@ -49,5 +65,5 @@ def pagando():
         return 'No tienes dinero suficiente para pagar'
 
 print(f'El total a pagar es de: {total_pagar()}$\n')
-print(f'Este es el dinero que te queda luego de pagar la pizza: {pagando()}\n')
+print(f'Este es el dinero que te queda luego de pagar la pizza: {pagando()}$\n')
 
