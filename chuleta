@@ -1,0 +1,33 @@
+✅ Checklist rápido para proyectos en VS Code
+1. Crear entorno virtual
+python -m venv .venv
+
+2. Activar entorno (en terminal integrada de VS Code)
+
+Windows PowerShell
+
+.\.venv\Scripts\Activate.ps1
+
+
+Windows CMD
+
+.\.venv\Scripts\activate
+
+
+Linux/macOS
+
+source .venv/bin/activate
+
+3. Seleccionar intérprete en VS Code
+
+Ctrl+Shift+P → Python: Select Interpreter → elegir .venv.
+
+4. Instalar dependencias
+pip install -qU pip setuptools wheel
+pip install -qU "langchain[google-genai]"
+
+5. Guardar dependencias
+pip freeze > requirements.txt
+
+6. Desactivar entorno
+deactivate
